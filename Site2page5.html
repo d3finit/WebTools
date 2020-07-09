@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="Stylesheet.css">
+  <link rel="stylesheet" type="text/css" href="w3.css">
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <div class="topnav">
+
+    <a href="Site2.html">Shopping List</a>
+    <a href="Site2page2.html">Temperature Converter</a>
+    <a href="Site2page3.html">Weight Converter</a>
+    <a href="Site2page4.html">Length Converter</a>
+    <a class="active" href="Site2page5.html">Speed Converter</a>
+  </div>
+  
+  <div class="header">
+    <h2>Speed Converter</h2>
+  </div>
+  
+  <div class="w3-row-padding" ">
+    <p style="margin-left:8px;margin-bottom:4px;">Type a value in any of the fields to convert between Speed measurements:</p>
+    <div class="w3-half w3-margin-top">
+      <label>MPH</label>
+      <input id="inputMPH" class="w3-input w3-border" type="number" placeholder="MPH" oninput="speedConverter(this.id,this.value)" onchange="speedConverter(this.id,this.value)">
+    </div>
+    <div class="w3-half w3-margin-top">
+      <label>KPH</label>
+      <input id="inputKPH" class="w3-input w3-border" type="number" placeholder="KPH" oninput="speedConverter(this.id,this.value)" onchange="speedConverter(this.id,this.value)">
+    </div>
+    <div class="w3-half w3-margin-top">
+      <label>Knots</label>
+      <input id="inputKnots" class="w3-input w3-border" type="number" placeholder="Knots" oninput="speedConverter(this.id,this.value)" onchange="speedConverter(this.id,this.value)">
+    </div>
+    <div class="w3-half w3-margin-top">
+      <label>Mach</label>
+      <input id="inputMach" class="w3-input w3-border" type="number" placeholder="Mach" oninput="speedConverter(this.id,this.value)" onchange="speedConverter(this.id,this.value)">
+    </div>
+  </div>
+
+  <script>
+    function speedConverter(source,valNum) {
+      valNum = parseFloat(valNum);
+      var inputMPH = document.getElementById("inputMPH");
+      var inputKPH = document.getElementById("inputKPH");
+      var inputKnots = document.getElementById("inputKnots");
+      var inputMach = document.getElementById("inputMach");
+      if (source=="inputMPH") {
+        inputKPH.value=(valNum*1.609344).toFixed(2);
+        inputKnots.value=(valNum/1.150779).toFixed(2);
+        inputMach.value=(valNum/761.207).toFixed(4);
+      }
+      if (source=="inputKPH") {
+        inputMPH.value=(valNum/1.609344).toFixed(2);
+        inputKnots.value=(valNum/1.852).toFixed(2);
+        inputMach.value=(valNum/1225.044).toFixed(5);
+      }
+      if (source=="inputKnots") {
+        inputMPH.value=(valNum*1.150779).toFixed(2);
+        inputKPH.value=(valNum*1.852).toFixed(2);
+        inputMach.value=(valNum/661.4708).toFixed(4);
+      }
+      if (source=="inputMach") {
+        inputMPH.value=(valNum*761.207).toFixed();
+        inputKPH.value=(valNum*1225.044).toFixed();
+        inputKnots.value=(valNum*661.4708).toFixed();
+      }
+    }
+    </script>
+
+</body>
+
+</html>

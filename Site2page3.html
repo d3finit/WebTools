@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="Stylesheet.css">
+  <link rel="stylesheet" type="text/css" href="w3.css">
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <div class="topnav">
+
+    <a href="Site2.html">Shopping List</a>
+    <a href="Site2page2.html">Temperature Converter</a>
+    <a class="active" href="Site2page3.html">Weight Converter</a>
+    <a href="Site2page4.html">Length Converter</a>
+    <a href="Site2page5.html">Speed Converter</a>
+
+  </div>
+  <div class="header">
+    <h2>Weight Converter</h2>
+  </div>
+  <div class="w3-row-padding">
+    <p style="margin-left:8px;margin-bottom:4px">Type a value in any of the fields to convert between weight
+      measurements:</p>
+    <div class="w3-half w3-margin-top">
+      <label>Pounds</label>
+      <input id="inputPounds" class="w3-input w3-border" type="number" placeholder="Pounds"
+        oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
+    </div>
+    <div class="w3-half w3-margin-top">
+      <label>Kilograms</label>
+      <input id="inputKilograms" class="w3-input w3-border" type="number" placeholder="Kilograms"
+        oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
+    </div>
+    <div class="w3-half w3-margin-top">
+      <label>Ounces</label>
+      <input id="inputOunces" class="w3-input w3-border" type="number" placeholder="Ounces"
+        oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
+    </div>
+    <div class="w3-half w3-margin-top">
+      <label>Grams</label>
+      <input id="inputGrams" class="w3-input w3-border" type="number" placeholder="Grams"
+        oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
+    </div>
+    <div class="w3-half w3-margin-top">
+      <label>Stones</label>
+      <input id="inputStones" class="w3-input w3-border" type="number" placeholder="Stones"
+        oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
+    </div>
+  </div>
+
+  <script>
+    function weightConverter(source, valNum) {
+      valNum = parseFloat(valNum);
+      var inputPounds = document.getElementById("inputPounds");
+      var inputKilograms = document.getElementById("inputKilograms");
+      var inputOunces = document.getElementById("inputOunces");
+      var inputGrams = document.getElementById("inputGrams");
+      var inputStones = document.getElementById("inputStones");
+      if (source == "inputPounds") {
+        inputKilograms.value = (valNum / 2.2046).toFixed(2);
+        inputOunces.value = (valNum * 16).toFixed(2);
+        inputGrams.value = (valNum / 0.0022046).toFixed();
+        inputStones.value = (valNum * 0.071429).toFixed(3);
+      }
+      if (source == "inputKilograms") {
+        inputPounds.value = (valNum * 2.2046).toFixed(2);
+        inputOunces.value = (valNum * 35.274).toFixed(2);
+        inputGrams.value = (valNum * 1000).toFixed();
+        inputStones.value = (valNum * 0.1574).toFixed(3);
+      }
+      if (source == "inputOunces") {
+        inputPounds.value = (valNum * 0.062500).toFixed(4);
+        inputKilograms.value = (valNum / 35.274).toFixed(4);
+        inputGrams.value = (valNum / 0.035274).toFixed(1);
+        inputStones.value = (valNum * 0.0044643).toFixed(4);
+      }
+      if (source == "inputGrams") {
+        inputPounds.value = (valNum * 0.0022046).toFixed(4);
+        inputKilograms.value = (valNum / 1000).toFixed(4);
+        inputOunces.value = (valNum * 0.035274).toFixed(3);
+        inputStones.value = (valNum * 0.00015747).toFixed(5);
+      }
+      if (source == "inputStones") {
+        inputPounds.value = (valNum * 14).toFixed(1);
+        inputKilograms.value = (valNum / 0.15747).toFixed(1);
+        inputOunces.value = (valNum * 224).toFixed();
+        inputGrams.value = (valNum / 0.00015747).toFixed();
+      }
+
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="Stylesheet.css">
+  <link rel="stylesheet" type="text/css" href="w3.css">
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <div class="topnav">
+
+    <a href="Site2.html">Shopping List</a>
+    <a class="active" href="Site2page2.html">Temperature Converter</a>
+    <a href="Site2page3.html">Weight Converter</a>
+    <a href="Site2page4.html">Length Converter</a>
+    <a href="Site2page5.html">Speed Converter</a>
+
+  </div>
+  <div class="header">
+    <h2>Temperature Converter</h2>
+  </div>
+  <div class="w3-row-padding" style="margin-left:8px">
+    <p style="margin-left:8px;margin-bottom:4px">Type a value in any of the fields to convert between temperature 
+    measurements:</p>
+    <div class="w3-half w3-margin-top">
+      <label>Fahrenheit</label>
+      <input id="inputFahrenheit" class="w3-input w3-border" type="number" min="-459.66999999999996" placeholder="Fahrenheit" oninput="temperatureConverter(this.id,this.value)" onchange="temperatureConverter(this.id,this.value)">
+    </div>
+    <div class="w3-half w3-margin-top">
+      <label>Celsius</label>
+      <input id="inputCelsius" class="w3-input w3-border" type="number" min="-273.15" placeholder="Celsius" oninput="temperatureConverter(this.id,this.value)" onchange="temperatureConverter(this.id,this.value)">
+    </div>
+    <div class="w3-half w3-margin-top">
+      <label>Kelvin</label>
+      <input id="inputKelvin" class="w3-input w3-border" type="number" min="0" placeholder="Kelvin" oninput="temperatureConverter(this.id,this.value)" onchange="temperatureConverter(this.id,this.value)">
+    </div>
+  </div>
+
+  <script>
+    function temperatureConverter(source,valNum) {
+      valNum = parseFloat(valNum);
+      var inputFahrenheit = document.getElementById("inputFahrenheit");
+      var inputCelsius = document.getElementById("inputCelsius");
+      var inputKelvin = document.getElementById("inputKelvin");
+      if (source=="inputFahrenheit") {
+        inputCelsius.value=((valNum-32)/1.8).toFixed(2);
+        inputKelvin.value=(((valNum-32)/1.8)+273.15).toFixed(2);
+      }
+      if (source=="inputCelsius") {
+        inputFahrenheit.value=((valNum*1.8)+32).toFixed(2);
+        inputKelvin.value=((valNum)+273.15).toFixed(2);
+      }
+      if (source=="inputKelvin") {
+        inputFahrenheit.value=(((valNum-273.15)*1.8)+32).toFixed(2);
+        inputCelsius.value=((valNum)-273.15).toFixed(2);
+      }
+    }
+    </script>
+</body>
+
+</html>

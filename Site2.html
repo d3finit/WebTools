@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="Stylesheet.css">
+  <link rel="stylesheet" type="text/css" href="w3.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <div class="topnav">
+
+    <a class="active" href="Site2.html">Shopping List</a>
+    <a href="Site2page2.html">Temperature Converter</a>
+    <a href="Site2page3.html">Weight Converter</a>
+    <a href="Site2page4.html">Length Converter</a>
+    <a href="Site2page5.html">Speed Converter</a>
+
+  </div>
+
+  <div id="myDIV" class="header">
+    <h2 style="margin:5px">My Shopping List</h2>
+    <input type="text" id="ToDo" placeholder="Title...">
+    <span onclick="newElement()" class="addBtn" id="MyBtn">Add</span>
+  </div>
+
+  <ul id="myUL">
+    <li>click to check off items</li>
+    <li>The list will reset if you close the browser window, change page on this site, or reload</li>
+  </ul>
+
+  <script>
+    // Create a "close" button and append it to each list item
+    var myNodelist = document.getElementsByTagName("LI");
+    var i;
+    for (i = 0; i < myNodelist.length; i++) {
+      var span = document.createElement("SPAN");
+      var txt = document.createTextNode("\u00D7");
+      span.className = "close";
+      span.appendChild(txt);
+      myNodelist[i].appendChild(span);
+    }
+
+    // Click on a close button to hide the current list item
+    var close = document.getElementsByClassName("close");
+    var i;
+    for (i = 0; i < close.length; i++) {
+      close[i].onclick = function () {
+        var div = this.parentElement;
+        div.style.display = "none";
+      }
+    }
+
+    // Add a "checked" symbol when clicking on a list item
+    var list = document.querySelector('ul');
+    list.addEventListener('click', function (ev) {
+      if (ev.target.tagName === 'LI') {
+        ev.target.classList.toggle('checked');
+      }
+    }, false);
+
+    // Create a new list item when clicking on the "Add" button
+    function newElement() {
+      var li = document.createElement("li");
+      var inputValue = document.getElementById("ToDo").value;
+      var t = document.createTextNode(inputValue);
+      li.appendChild(t);
+      if (inputValue === '') {
+        alert("You must write something!");
+      } else {
+        document.getElementById("myUL").appendChild(li);
+      }
+      document.getElementById("ToDo").value = "";
+
+      var span = document.createElement("SPAN");
+      var txt = document.createTextNode("\u00D7");
+      span.className = "close";
+      span.appendChild(txt);
+      li.appendChild(span);
+
+      for (i = 0; i < close.length; i++) {
+        close[i].onclick = function () {
+          var div = this.parentElement;
+          div.style.display = "none";
+        }
+      }
+    }
+
+// Get the input field
+document.getElementById('ToDo').addEventListener('keypress', function (e) {
+    if (e.keyCode == 13) {
+            newElement();
+    }
+}, false);
+  </script>
+
+</body>
+
+</html>
