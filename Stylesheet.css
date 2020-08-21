@@ -123,7 +123,7 @@ ul li.checked::before {
 
 /* Style the header */
 .header {
-    background-color: #4CAF50;
+    background-color: #1abc9c;
     padding         : 30px 40px;
     color           : white;
     text-align      : center;
