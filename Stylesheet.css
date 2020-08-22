@@ -230,7 +230,7 @@ body {
   
   .topnav a.active {
     background-color: #1abc9c;
-    color: white;
+    color: black;
   }
   
   .topnav .icon {
