@@ -244,6 +244,11 @@ body {
       display: block;
     }
   }
+    @media screen and (max-width: 600px)   {
+      .topnav a {
+      display: none;
+    }
+  }
   
   @media screen and (max-width: 600px) {
     .topnav.responsive {position: relative;}
