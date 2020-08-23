@@ -113,7 +113,9 @@ ul li.checked::before {
     position: absolute;
     right   : 0;
     top     : 0;
-    padding : 12px 16px 12px 16px;
+    padding : 12px 3px 12px 16px;
+    color: red;
+    font-weight: 800;
 }
 
 .close:hover {
