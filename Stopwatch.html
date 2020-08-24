@@ -1,73 +1,43 @@
 <html>
 
 <head>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            background: #333;
-            color: #bbb;
-            font-family: Menlo;
-        }
-
-        .controls {
-            position: fixed;
-            text-align: center;
-            top: 1em;
-            width: 100%;
-        }
-
-        .button {
-            color: #bbb;
-            font-size: 4vw;
-            margin: 0 0.5em;
-            text-decoration: none;
-        }
-
-        .button:first-child {
-            margin-left: 0;
-        }
-
-        .button:last-child {
-            margin-right: 0;
-        }
-
-        .button:hover {
-            color: white;
-        }
-
-        .stopwatch {
-            font-size: 20vw;
-            height: 100%;
-            line-height: 100vh;
-            text-align: center;
-        }
-
-        .results {
-            border-color: lime;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-    </style>
+    <title>WebTools: Shopping List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="Stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="w3.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
-    <nav class="controls">
+    <title>WebTools: Stopwatch</title>
+    <div class="topnav" id="myTopnav">
+        <a href="index.html">Shopping List</a>
+        <a href="Site2page2.html">Temperature Converter</a>
+        <a href="Site2page3.html">Weight Converter</a>
+        <a href="Site2page4.html">Length Converter</a>
+        <a href="Site2page5.html">Speed Converter</a>
+        <a herf="Stopwatch.html">Stopwatch</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <div class="topnav" id="myTopnav">
         <a href="#" class="button" onClick="stopwatch.start();">Start</a>
         <a href="#" class="button" onClick="stopwatch.lap();">Lap</a>
         <a href="#" class="button" onClick="stopwatch.stop();">Stop</a>
         <a href="#" class="button" onClick="stopwatch.restart();">Restart</a>
         <a href="#" class="button" onClick="stopwatch.clear();">Clear Laps</a>
-    </nav>
-    <div class="stopwatch"></div>
+    </div>
+
+    <h1><div class="stopwatch"></div></h1>
     <ul class="results"></ul>
 </body>
 <script>
