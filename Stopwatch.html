@@ -14,6 +14,21 @@
     <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+    <style>
+        .btn {
+            background-color: #1abc9c;
+            border: none;
+            color: black;
+            padding: 12px 30px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        /* Darker background on mouse-over */
+        .btn:hover {
+            background-color: #90E2D2;
+        }
+    </style>
 </head>
 
 <body>
@@ -24,20 +39,32 @@
         <a href="Site2page3.html">Weight Converter</a>
         <a href="Site2page4.html">Length Converter</a>
         <a href="Site2page5.html">Speed Converter</a>
-        <a herf="Stopwatch.html">Stopwatch</a>
+        <a href="Stopwatch.html" class="active">Stopwatch</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
             <i class="fa fa-bars"></i>
         </a>
     </div>
-    <div class="topnav" id="myTopnav">
-        <a href="#" class="button" onClick="stopwatch.start();">Start</a>
-        <a href="#" class="button" onClick="stopwatch.lap();">Lap</a>
-        <a href="#" class="button" onClick="stopwatch.stop();">Stop</a>
-        <a href="#" class="button" onClick="stopwatch.restart();">Restart</a>
-        <a href="#" class="button" onClick="stopwatch.clear();">Clear Laps</a>
-    </div>
+    <a href="#" class="button" onClick="stopwatch.start();">
+        <button class="btn" style="width:100%">Start</button>
+    </a>
+    <a href="#" class="button" onClick="stopwatch.lap();">
+        <button class="btn" style="width:100%">Lap</button>
+    </a>
+    <a href="#" class="button" onClick="stopwatch.stop();">
+        <button class="btn" style="width:100%">Stop</button>
+    </a>
+    <a href="#" class="button" onClick="stopwatch.restart();">
+        <button class="btn" style="width:100%">Restart</button>
+    </a>
+    <a href="#" class="button" onClick="stopwatch.clear();">
+        <button class="btn" style="width:100%">Clear Laps</button>
+    </a>
+    <button class="btn" style="width:100%">
+        <h1>
+            <div class="stopwatch"></div>
+        </h1>
+    </button>
 
-    <h1><div class="stopwatch"></div></h1>
     <ul class="results"></ul>
 </body>
 <script>
@@ -139,6 +166,16 @@ ${pad0(Math.floor(times[2]), 2)}`;
     let stopwatch = new Stopwatch(
         document.querySelector('.stopwatch'),
         document.querySelector('.results'));
+</script>
+<script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
 </script>
 
 </html>
