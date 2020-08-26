@@ -237,20 +237,20 @@ body {
     display: none;
   }
   
-  @media screen and (max-width: 915px) {
+  @media screen and (max-width: 1032px) {
     .topnav a:not(:first-child) {display: none;}
     .topnav a.icon {
       float: right;
       display: block;
     }
   }
-    @media screen and (max-width: 915px)   {
+    @media screen and (max-width: 1032px)   {
       .topnav a {
       display: none;
     }
   }
   
-  @media screen and (max-width: 915px) {
+  @media screen and (max-width: 1032px) {
     .topnav.responsive {position: relative;}
     .topnav.responsive .icon {
       position: absolute;
