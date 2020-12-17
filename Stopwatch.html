@@ -1,0 +1,192 @@
+<html>
+
+<head>
+    <title>WebTools: Shopping List</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-176557446-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-176557446-1');
+</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="Stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="w3.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="fav/favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="fav/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <style>
+        .btn {
+            background-color: #1abc9c;
+            border: none;
+            color: black;
+            padding: 12px 30px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        /* Darker background on mouse-over */
+        .btn:hover {
+            background-color: #90E2D2;
+        }
+    </style>
+</head>
+
+<body>
+    <title>WebTools: Stopwatch</title>
+    <div class="topnav" id="myTopnav">
+        <a href="index.html">Shopping List</a>
+        <a href="Site2page2.html">Temperature Converter</a>
+        <a href="Site2page3.html">Weight Converter</a>
+        <a href="Site2page4.html">Length Converter</a>
+        <a href="Site2page5.html">Speed Converter</a>
+        <a href="Stopwatch.html">Stopwatch</a>
+        <a href="https://github.com/CodeDude404/WebTools.github.io" target="blank">Git Repo</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <a href="#" class="button" onClick="stopwatch.start();">
+        <button class="btn" style="width:100%">Start</button>
+    </a>
+    <a href="#" class="button" onClick="stopwatch.lap();">
+        <button class="btn" style="width:100%">Lap</button>
+    </a>
+    <a href="#" class="button" onClick="stopwatch.stop();">
+        <button class="btn" style="width:100%">Stop</button>
+    </a>
+    <a href="#" class="button" onClick="stopwatch.restart();">
+        <button class="btn" style="width:100%">Restart</button>
+    </a>
+    <a href="#" class="button" onClick="stopwatch.clear();">
+        <button class="btn" style="width:100%">Clear Laps</button>
+    </a>
+    <button class="btn" style="width:100%">
+        <h1>
+            <div class="stopwatch"></div>
+        </h1>
+    </button>
+
+    <ul class="results"></ul>
+</body>
+<script>
+    class Stopwatch {
+        constructor(display, results) {
+            this.running = false;
+            this.display = display;
+            this.results = results;
+            this.laps = [];
+            this.reset();
+            this.print(this.times);
+        }
+
+        reset() {
+            this.times = [0, 0, 0];
+        }
+
+        start() {
+            if (!this.time) this.time = performance.now();
+            if (!this.running) {
+                this.running = true;
+                requestAnimationFrame(this.step.bind(this));
+            }
+        }
+
+        lap() {
+            let times = this.times;
+            let li = document.createElement('li');
+            li.innerText = this.format(times);
+            this.results.appendChild(li);
+        }
+
+        stop() {
+            this.running = false;
+            this.time = null;
+        }
+
+        restart() {
+            if (!this.time) this.time = performance.now();
+            if (!this.running) {
+                this.running = true;
+                requestAnimationFrame(this.step.bind(this));
+            }
+            this.reset();
+        }
+
+        clear() {
+            clearChildren(this.results);
+        }
+
+        step(timestamp) {
+            if (!this.running) return;
+            this.calculate(timestamp);
+            this.time = timestamp;
+            this.print();
+            requestAnimationFrame(this.step.bind(this));
+        }
+
+        calculate(timestamp) {
+            var diff = timestamp - this.time;
+            // Hundredths of a second are 100 ms
+            this.times[2] += diff / 10;
+            // Seconds are 100 hundredths of a second
+            if (this.times[2] >= 100) {
+                this.times[1] += 1;
+                this.times[2] -= 100;
+            }
+            // Minutes are 60 seconds
+            if (this.times[1] >= 60) {
+                this.times[0] += 1;
+                this.times[1] -= 60;
+            }
+        }
+
+        print() {
+            this.display.innerText = this.format(this.times);
+        }
+
+        format(times) {
+            return `\
+${pad0(times[0], 2)}:\
+${pad0(times[1], 2)}:\
+${pad0(Math.floor(times[2]), 2)}`;
+        }
+    }
+
+    function pad0(value, count) {
+        var result = value.toString();
+        for (; result.length < count; --count)
+            result = '0' + result;
+        return result;
+    }
+
+    function clearChildren(node) {
+        while (node.lastChild)
+            node.removeChild(node.lastChild);
+    }
+
+    let stopwatch = new Stopwatch(
+        document.querySelector('.stopwatch'),
+        document.querySelector('.results'));
+</script>
+<script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+</script>
+
+</html>
