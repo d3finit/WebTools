@@ -9,8 +9,8 @@ Original Version
 
 ## v1.1
 
-Current Version. Git Repo button added. 
+Git Repo button added. 
 
 ## v1.2-alpha
 
-Current alpha version. Will have fullscreen button and details button. Currently has more organized file system.
+Current version.  Currently has more organized file system.
