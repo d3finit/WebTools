@@ -11,6 +11,6 @@ Original Version
 
 Git Repo button added. 
 
-## v1.2-alpha
+## v1.2
 
 Current version.  Currently has more organized file system.
