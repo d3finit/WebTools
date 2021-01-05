@@ -15,6 +15,6 @@ Git Repo button added.
 
 Current version. Currently has more organized file system.
 
-## v1.3
+## v1.4
 
 Current version. Info model has been added.

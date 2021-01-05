@@ -24,16 +24,17 @@
 
   gtag('config', 'UA-176557446-1');
 </script>
+
+
 </head>
 
 <body>
-  <title>WebTools: Weight Converter</title>
   <div class="topnav" id="myTopnav">
     <a href="index.html">Shopping List</a>
-    <a href="Site2page2.html">Temperature Converter</a>
-    <a class="active" href="Site2page3.html">Weight Converter</a>
-    <a href="Site2page4.html">Length Converter</a>
-    <a href="Site2page5.html">Speed Converter</a>
+    <a class = "active" href="temp.html">Temperature Converter</a>
+    <a href="weight.html">Weight Converter</a>
+    <a href="length.html">Length Converter</a>
+    <a href="speed.html">Speed Converter</a>
     <a href="Stopwatch.html">Stopwatch</a>
     <a onclick="document.getElementById('id01').style.display='block'">Info</a>
 
@@ -45,7 +46,7 @@
           <span onclick="document.getElementById('id01').style.display='none'"
             class="w3-button w3-display-topright">&times;</span>
           <h1>Info</h1>
-          <p>Version: v1.3</p>
+          <p>Version: v1.4</p>
           <p><a herf="https://github.com/CodeDude404/WebTools.github.io" target="blank">Git Repo</a></p>
         </div>
       </div>
@@ -56,40 +57,25 @@
     </a>
   </div>
   <div class="header">
-    <h2 class="stwitch">Weight Converter</h2>
+    <h2 class="stwitch">Temperature Converter</h2>
   </div>
-  <div class="w3-row-padding">
-    <p style="margin-left:8px;margin-bottom:4px">Type a value in any of the fields to convert between weight
-      measurements:</p>
+  <div class="w3-row-padding" style="margin-left:8px">
+    <p style="margin-left:8px;margin-bottom:4px">Type a value in any of the fields to convert between temperature 
+    measurements:</p>
     <div class="w3-half w3-margin-top">
-      <label>Pounds</label>
-      <input id="inputPounds" class="w3-input w3-border" type="number" placeholder="Pounds"
-        oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
+      <label>Fahrenheit</label>
+      <input id="inputFahrenheit" class="w3-input w3-border" type="number" min="-459.66999999999996" placeholder="Fahrenheit" oninput="temperatureConverter(this.id,this.value)" onchange="temperatureConverter(this.id,this.value)">
     </div>
     <div class="w3-half w3-margin-top">
-      <label>Kilograms</label>
-      <input id="inputKilograms" class="w3-input w3-border" type="number" placeholder="Kilograms"
-        oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
+      <label>Celsius</label>
+      <input id="inputCelsius" class="w3-input w3-border" type="number" min="-273.15" placeholder="Celsius" oninput="temperatureConverter(this.id,this.value)" onchange="temperatureConverter(this.id,this.value)">
     </div>
     <div class="w3-half w3-margin-top">
-      <label>Ounces</label>
-      <input id="inputOunces" class="w3-input w3-border" type="number" placeholder="Ounces"
-        oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
-    </div>
-    <div class="w3-half w3-margin-top">
-      <label>Grams</label>
-      <input id="inputGrams" class="w3-input w3-border" type="number" placeholder="Grams"
-        oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
-    </div>
-    <div class="w3-half w3-margin-top">
-      <label>Stones</label>
-      <input id="inputStones" class="w3-input w3-border" type="number" placeholder="Stones"
-        oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
+      <label>Kelvin</label>
+      <input id="inputKelvin" class="w3-input w3-border" type="number" min="0" placeholder="Kelvin" oninput="temperatureConverter(this.id,this.value)" onchange="temperatureConverter(this.id,this.value)">
     </div>
   </div>
-
-  <script src="JS/weight.js"></script>
-
+  <script src="JS/temp.js"></script>
 </body>
 
 </html>
