@@ -15,6 +15,7 @@
         <a href="weight.html">Weight Converter</a>
         <a href="length.html">Length Converter</a>
         <a href="speed.html">Speed Converter</a>
+        <a onclick="document.getElementById('id01').style.display='block'">Info</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
             <i class="fa fa-bars"></i>
         </a>
@@ -34,5 +35,16 @@
         }
     }
 </script>
-
+ <!-- The Modal -->
+ <div id="id01" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id01').style.display='none'"
+          class="w3-button w3-display-topright">&times;</span>
+        <h1>Info</h1>
+        <p>Version: v1.4</p>
+        <p>Git Repo: https://github.com/CodeDude404/WebTools.github.io</p>
+      </div>
+    </div>
+  </div>
 </html>
