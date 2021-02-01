@@ -12,7 +12,7 @@ Info model has been added.
 
 ## v1.2
 
-Current version. Currently has more organized file system.
+Currently has more organized file system.
 
 ## v1.1
 
