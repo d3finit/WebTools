@@ -24,10 +24,3 @@ Git Repo button added.
 ## v1.0
 
 Original Version
-
-
-
-
-
-
-
