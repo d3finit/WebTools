@@ -16,14 +16,14 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
   <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-176557446-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176557446-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'UA-176557446-1');
-</script>
+    gtag('config', 'UA-176557446-1');
+  </script>
 
 
 </head>
@@ -31,14 +31,16 @@
 <body>
   <div class="topnav" id="myTopnav">
     <a href="index.html">Shopping List</a>
-    <a class = "active" href="temp.html">Temperature Converter</a>
+    <a class="active" href="temp.html">Temperature Converter</a>
     <a href="weight.html">Weight Converter</a>
     <a href="length.html">Length Converter</a>
     <a href="speed.html">Speed Converter</a>
     <a href="Stopwatch.html">Stopwatch</a>
     <a onclick="document.getElementById('id01').style.display='block'">Info</a>
 
-    
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
     <!-- The Modal -->
     <div id="id01" class="w3-modal">
       <div class="w3-modal-content">
@@ -47,32 +49,34 @@
             class="w3-button w3-display-topright">&times;</span>
           <h1>Info</h1>
           <p>Version: v1.5</p>
-          <p><a herf="https://github.com/CodeDude404/WebTools.github.io" target="blank">Git Repo</a></p>
+          <p><a class="nav-modal" href="https://github.com/CodeDude404/WebTools.github.io" target="blank">Git Repo</a></p>
         </div>
       </div>
     </div>
-  
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
+
   </div>
   <div class="header">
     <h2 class="stwitch">Temperature Converter</h2>
+    <a href="#">test</a>
   </div>
   <div class="w3-row-padding" style="margin-left:8px">
-    <p style="margin-left:8px;margin-bottom:4px">Type a value in any of the fields to convert between temperature 
-    measurements:</p>
+    <p style="margin-left:8px;margin-bottom:4px">Type a value in any of the fields to convert between temperature
+      measurements:</p>
     <div class="w3-half w3-margin-top">
       <label>Fahrenheit</label>
-      <input id="inputFahrenheit" class="w3-input w3-border" type="number" min="-459.66999999999996" placeholder="Fahrenheit" oninput="temperatureConverter(this.id,this.value)" onchange="temperatureConverter(this.id,this.value)">
+      <input id="inputFahrenheit" class="w3-input w3-border" type="number" min="-459.66999999999996"
+        placeholder="Fahrenheit" oninput="temperatureConverter(this.id,this.value)"
+        onchange="temperatureConverter(this.id,this.value)">
     </div>
     <div class="w3-half w3-margin-top">
       <label>Celsius</label>
-      <input id="inputCelsius" class="w3-input w3-border" type="number" min="-273.15" placeholder="Celsius" oninput="temperatureConverter(this.id,this.value)" onchange="temperatureConverter(this.id,this.value)">
+      <input id="inputCelsius" class="w3-input w3-border" type="number" min="-273.15" placeholder="Celsius"
+        oninput="temperatureConverter(this.id,this.value)" onchange="temperatureConverter(this.id,this.value)">
     </div>
     <div class="w3-half w3-margin-top">
       <label>Kelvin</label>
-      <input id="inputKelvin" class="w3-input w3-border" type="number" min="0" placeholder="Kelvin" oninput="temperatureConverter(this.id,this.value)" onchange="temperatureConverter(this.id,this.value)">
+      <input id="inputKelvin" class="w3-input w3-border" type="number" min="0" placeholder="Kelvin"
+        oninput="temperatureConverter(this.id,this.value)" onchange="temperatureConverter(this.id,this.value)">
     </div>
   </div>
   <script src="JS/temp.js"></script>
