@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/Stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="css/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="fav/favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="fav/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176557446-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-176557446-1');
+  </script>
+    <title>Webtools Apps - Shopping List</title>
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="index.html">Shopping List</a>
+        <a href="temp.html">Temperature Converter</a>
+        <a href="weight.html">Weight Converter</a>
+        <a href="length.html">Length Converter</a>
+        <a href="speed.html">Speed Converter</a>
+        <a onclick="document.getElementById('id01').style.display='block'">Info</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+        
+    </div>
+    <div class="w3-row-padding" style="margin-left:8px">
+        <h1>Webtools Apps - Shopping List</h1>
+        <h2>Installation</h2>
+
+        <li>
+            <ol>Download the .zip of the app from </ol>
+        </li>
+    </div>
+</body>
+<script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+</script>
+</html>
